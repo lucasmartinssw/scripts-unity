@@ -5,3 +5,9 @@
 ```csharp
 transform.Translate(Input.GetAxis("Horizontal") * velocidade * Time.deltaTime, 0, 0);
 transform.Translate(0, Input.GetAxis("Vertical") * velocidade * Time.deltaTime, 0);
+
+
+## Rotacionar
+
+```csharp
+transform.Rotate(0, 0, velocidadeRotacao * Time.deltaTime);
