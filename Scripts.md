@@ -12,3 +12,10 @@ transform.Translate(0, Input.GetAxis("Vertical") * velocidade * Time.deltaTime, 
 ```csharp
 transform.Rotate(0, 0, velocidadeRotacao * Time.deltaTime);
 ```
+
+## Instancionar objetos dinamicamente 
+
+```csharp
+public GameObject objeto1;
+Instantiate(objeto1, transform.position, transform.rotation);
+```
