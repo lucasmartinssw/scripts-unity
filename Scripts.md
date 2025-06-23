@@ -19,3 +19,14 @@ transform.Rotate(0, 0, velocidadeRotacao * Time.deltaTime);
 public GameObject objeto1;
 Instantiate(objeto1, transform.position, transform.rotation);
 ```
+
+## Destruir outro objeto
+```csharp
+void OnCollisionEnter2D(Collision2D other)
+{
+    if (other.gameObject.CompareTag("inimigo"))
+    {
+        Destroy(other.gameObject);
+    }
+}
+```
