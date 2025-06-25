@@ -30,3 +30,15 @@ void OnCollisionEnter2D(Collision2D other)
     }
 }
 ```
+
+## Perseguição (Lógica fantasma do Pacman)
+```csharp
+public Transform Player;       // Referência ao player
+public float velocidade = 3f;   // Velocidade do fantasma
+if (Player != null)
+    {
+        // Move na direção do jogador
+        Vector3 direcao = (Player.position - transform.position).normalized;
+        transform.position += direcao * velocidade * Time.deltaTime;
+    }
+```
