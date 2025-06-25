@@ -42,3 +42,40 @@ if (Player != null)
         transform.position += direcao * velocidade * Time.deltaTime;
     }
 ```
+
+## Teletransporte (Mudar posição do Player no mesmo cenário)
+```csharp
+public Transform destino;          // Outro portal
+public float cooldown = 0.5f;      // Tempo antes de permitir novo teleporte
+
+private bool podeTeleportar = true;
+
+private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player") && podeTeleportar)
+        {
+            // Teleporta o jogador para o destino
+            col.transform.position = destino.position;
+
+            // Inicia cooldown no portal de destino para evitar retorno imediato
+            Portal outroPortal = destino.GetComponent<Portal>();
+            if (outroPortal != null)
+            {
+                outroPortal.DesativarTemporariamente(cooldown);
+            }
+        }
+    }
+
+    // Desativa o teleporte por um tempo
+    public void DesativarTemporariamente(float tempo)
+    {
+        podeTeleportar = false;
+        Invoke(nameof(ReativarTeleporte), tempo);
+    }
+
+    private void ReativarTeleporte()
+    {
+        podeTeleportar = true;
+    }
+
+```
