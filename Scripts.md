@@ -95,3 +95,8 @@ if (sound != null)
     sound.Play();
 }
 ```
+
+### Trocar de Cena
+```csharp
+SceneManager.LoadScene("YouWin");
+```
