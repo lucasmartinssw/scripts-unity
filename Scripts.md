@@ -66,16 +66,16 @@ private void OnTriggerEnter2D(Collider2D col)
         }
     }
 
-    // Desativa o teleporte por um tempo
-    public void DesativarTemporariamente(float tempo)
-    {
-        podeTeleportar = false;
-        Invoke(nameof(ReativarTeleporte), tempo);
-    }
+// Desativa o teleporte por um tempo
+public void DesativarTemporariamente(float tempo)
+{
+    podeTeleportar = false;
+    Invoke(nameof(ReativarTeleporte), tempo);
+}
 
-    private void ReativarTeleporte()
-    {
-        podeTeleportar = true;
-    }
+private void ReativarTeleporte()
+{
+    podeTeleportar = true;
+}
 
 ```
