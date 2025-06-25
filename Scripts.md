@@ -86,3 +86,12 @@ private void ReativarTeleporte()
     UnityEditor.EditorApplication.isPlaying = false;
 #endif
 ```
+
+### Tocar música dinamicamente
+```csharp
+AudioSource sound = GetComponent<AudioSource>();
+if (sound != null)
+{
+    sound.Play();
+}
+```
