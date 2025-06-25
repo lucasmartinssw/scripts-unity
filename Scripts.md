@@ -79,3 +79,10 @@ private void ReativarTeleporte()
 }
 
 ```
+
+### Fechar o editor que roda o jogo 
+```csharp
+#if UNITY_EDITOR
+    UnityEditor.EditorApplication.isPlaying = false;
+#endif
+```
