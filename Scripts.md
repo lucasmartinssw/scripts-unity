@@ -98,5 +98,6 @@ if (sound != null)
 
 ### Trocar de Cena
 ```csharp
+using UnityEngine.SceneManagement;
 SceneManager.LoadScene("YouWin");
 ```
